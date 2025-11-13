@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:20
+    container_name: node_app
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=mongodb://mongo:27017/posts
+    depends_on:
+      - mongo
+    command: bash -c "npm install && node app.js"
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
