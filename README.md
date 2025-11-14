@@ -1,3 +1,15 @@
+- [Step 1: Create a Git repo](#step-1-create-a-git-repo)
+- [Step 2: Deploy the app locally](#step-2-deploy-the-app-locally)
+- [Blockers/Errors:](#blockerserrors)
+- [Step 3: Deploying app using AWS VM](#step-3-deploying-app-using-aws-vm)
+- [DB VM:](#db-vm)
+- [APP VM:](#app-vm)
+- [Blockers/Errors:](#blockerserrors-1)
+- [Step 4: Deploy app and database on AWS using Docker](#step-4-deploy-app-and-database-on-aws-using-docker)
+- [Step 5: Deploy app and database on AWS using Kubernetes (Minikube)](#step-5-deploy-app-and-database-on-aws-using-kubernetes-minikube)
+- [What I learnt from this project](#what-i-learnt-from-this-project)
+
+
 ### Java Springboot app Notes
 
 ## Step 1: Create a Git repo
@@ -144,3 +156,6 @@
 ![seed-database-success](images/seed-database-success.png)
 * I then went to the browser and tried the /posts page to check if the database had worked.
 ![posts-page-working-with-seeded-database](images/posts-page-working-with-seeded-database.png)
+
+## What I learnt from this project
+During this project, I was able to learn how to deploy an application from end to end using a GitHub repository and SQL seed scripts. Once I started using virtual machines, I was able to using Bash scripts that run through cloud user data, allowing the app and database VMs to configure themselves on startup. I then learned how to containerise my application using Docker, write Dockerfiles, create docker-compose configurations, build and push images to Docker Hub, and deploy them through a single VM provisioning script. I advanced to use Kubernetes to create YAML files to orchestrate the app and database on one machine, with another automated script setting up Kubernetes and applying all configurations. This made me develop my hands-on experience for platforms I had never used before and made me confident on using them as I learnt more about why we use them and what they do along the way. 
