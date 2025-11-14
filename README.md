@@ -1,3 +1,5 @@
+- [Java Springboot app Notes](#java-springboot-app-notes)
+  - [Project Architecture](#project-architecture)
 - [Step 1: Create a Git repo](#step-1-create-a-git-repo)
 - [Step 2: Deploy the app locally](#step-2-deploy-the-app-locally)
 - [Blockers/Errors:](#blockerserrors)
@@ -10,7 +12,15 @@
 - [What I learnt from this project](#what-i-learnt-from-this-project)
 
 
-### Java Springboot app Notes
+## Java Springboot app Notes
+
+### Project Architecture
+
+![project-architecture](images/project-architecture.png)
+
+This shows the overall project architecture and the steps I have take to get the app deployed using the cloud with applications and platforms such as Kubernetes and Docker. 
+
+It begins with a GitHub repository containing the application folder. That repository is then cloned into a new repo to ensure that the application folder is accessible for later cloud deployment steps. From there, the workflow proceeds to Local Deployment, where the Spring Boot application runs on a laptop and connects to a local MySQL/MongoDB database for initial testing. Once the application is verified locally, the process moves to AWS Cloud Deployment, where two virtual machines (VMs) are used: one for running the Spring Boot application (App VM) and another for the database (DB VM). Both VMs are tested manually at first and then automated using User Data scripts, enabling consistent, repeatable deployment in the cloud.
 
 ## Step 1: Create a Git repo
 * Create a Git repo and clone it into Git bash.
